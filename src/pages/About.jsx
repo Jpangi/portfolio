@@ -14,7 +14,6 @@ function About() {
         given me a strong foundation in logical thinking and project
         management—skills I now bring to software development.
       </p>
-      {/* my stack component */}
       {/* experience component */}
       <Skills/>
       </div>

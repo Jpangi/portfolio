@@ -12,7 +12,6 @@ function Home() {
             beautiful websites your users will love
           </p>
         </div>
-        {/* Image component */}
         <ProfilePic />
         {/* two button components */}
         {/* social media components */}

@@ -45,7 +45,7 @@ function Projects() {
               <div className="project-tech">
                 {project.tech.map((tech, techIndex) => (
                   <span key={techIndex} className="tech-item">
-                    🔧 {tech} {techIndex < project.tech.length - 1 ? "·" : ""}
+                    🔧 {tech} 
                   </span>
                 ))}
               </div>

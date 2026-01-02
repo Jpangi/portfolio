@@ -1,20 +1,32 @@
-import React from 'react';
+import React from "react";
+import { FaGithub } from "react-icons/fa6";
 
 function Projects() {
-
   const projectsData = [
     {
-      title: "Grounds For Debate - Coffee Bean reviews",
-      description: "Built a custom Odoo module that adds follow-up automation and smart controls to contact records. Includes scheduled jobs, role-based permissions, and UI enhancements.",
-      tech: ["Javascript", "Express", "React", "GitHub", "Node.js"],
-      link: "GitHub",
+      title: "Portfolio",
+      description:
+        "full-stack web application for managing personal stock portfolios with user authentication, CRUD operations, and interactive data visualization. Built with the MEN stack (MongoDB, Express.js, Node.js) and EJS templating.",
+      tech: ["Javascript", "Express", "GitHub", "Node.js", "CSS"],
+      link: "https://grounds-for-debate.onrender.com/",
+      github: "https://github.com/Jpangi/men-stack-stock-portfolio-app",
     },
     {
       title: "Grounds For Debate",
-      description: "Your existing project from the original code.",
-      tech: ["Javascript", "Express", "React", "GitHub", "Node.js"],
+      description:
+        "Coffee tracking web application that enables users to log, rate, and review their coffee beans while discovering top-rated beans from the community. Built using the MERN stack (MongoDB, Express, React, Node.js). Developed as sole programmer, handling all aspects of design, development, and deployment.",
+      tech: ["Javascript", "Express", "React", "GitHub", "Node.js", "CSS"],
       link: "https://grounds-for-debate.onrender.com/",
-    }
+      github: "https://github.com/Jpangi/grounds-for-debate",
+    },
+    {
+      title: "Project 3",
+      description:
+        "Built a custom Odoo module that adds follow-up automation and smart controls to contact records. Includes scheduled jobs, role-based permissions, and UI enhancements.",
+      tech: ["Python", "Express", "React", "GitHub", "Node.js", "CSS"],
+      link: "Visit",
+      github: "https://github.com/Jpangi/grounds-for-debate",
+    },
   ];
 
   return (
@@ -25,28 +37,30 @@ function Projects() {
             <div key={index} className="project-card">
               <div className="project-header">
                 <span className="project-icon">🔹</span>
-                <h2 className="project-title">
-                  {project.title}
-                </h2>
+                <h2 className="project-title">{project.title}</h2>
               </div>
-              
-              <p className="project-description">
-                {project.description}
-              </p>
-              
+
+              <p className="project-description">{project.description}</p>
+
               <div className="project-tech">
                 {project.tech.map((tech, techIndex) => (
                   <span key={techIndex} className="tech-item">
-                    🔧 {tech} {techIndex < project.tech.length - 1 ? '·' : ''}
+                    🔧 {tech} {techIndex < project.tech.length - 1 ? "·" : ""}
                   </span>
                 ))}
               </div>
-              
+
               <div className="project-footer">
-                {project.isPrivate && (
-                  <span className="project-private">
-                    🔒 Private
-                  </span>
+                {project.github && (
+                    
+                  <a
+                    href={project.github}
+                    className="project-github"
+                    target="_blank"
+                    rel="noopener noreferrer"
+                  >
+                    <FaGithub /> {project.github.includes("http") ? "Github" : project.github}
+                  </a>
                 )}
                 {project.link && (
                   <a
@@ -55,8 +69,9 @@ function Projects() {
                     target="_blank"
                     rel="noopener noreferrer"
                   >
-                    🔗 {project.link.includes('http') ? 'Visit' : project.link}
+                    🔗 {project.link.includes("http") ? "Visit" : project.link}
                   </a>
+                  
                 )}
               </div>
             </div>

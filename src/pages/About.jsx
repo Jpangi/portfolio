@@ -1,5 +1,5 @@
 
-
+import Skills from "../components/skills/Skills";
 
 function About() {
   return (
@@ -16,7 +16,7 @@ function About() {
       </p>
       {/* my stack component */}
       {/* experience component */}
-      {/* skills component */}
+      <Skills/>
       </div>
     </>
   );

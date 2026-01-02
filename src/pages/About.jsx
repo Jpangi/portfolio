@@ -1,5 +1,6 @@
 
 import Skills from "../components/skills/Skills";
+import {skillsData} from '../util/helper'
 
 function About() {
   return (
@@ -14,8 +15,7 @@ function About() {
         given me a strong foundation in logical thinking and project
         management—skills I now bring to software development.
       </p>
-      {/* experience component */}
-      <Skills/>
+      <Skills skillsData={skillsData}/>
       </div>
     </>
   );

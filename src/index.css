@@ -1,0 +1,197 @@
+
+
+.home-container{
+  display: flex;
+  align-items: center;     /* vertical centering */
+  justify-content: center; /* horizontal centering */
+  gap: 2rem;  
+  min-height: 100vh;
+   background: #f8f8f8;
+  padding: 2rem;
+  color: #222222;
+}
+
+.home-container h1{
+  font-size: 5em;
+}
+.home-container p{
+  font-size: 2.0em;
+}
+
+/*Profile picture*/
+
+.profile-image {
+  display: flex;
+  justify-content: right;
+  width: 30%;
+  height: 75%;
+  object-fit: cover;
+  border-radius: 12%;
+  
+}
+
+/* Projects.css */
+body {
+   background: #f8f8f8;
+}
+
+/* Main Container */
+.projects-container {
+  min-height: 100vh;
+  background: #f8f8f8;
+  padding: 2rem;
+}
+
+/* Grid Wrapper */
+.projects-wrapper {
+  max-width: 1280px;
+  margin: 0 auto;
+}
+
+/* Projects Grid */
+.projects-grid {
+  display: grid;
+  grid-template-columns: 1fr;
+  gap: 1.5rem;
+}
+
+@media (min-width: 768px) {
+  .projects-grid {
+    grid-template-columns: repeat(2, 1fr);
+  }
+}
+
+/* Project Card */
+.project-card {
+  background: #ffff;
+  backdrop-filter: blur(8px);
+  border: 1px solid #7b7b7b;
+  border-radius: 1rem;
+  padding: 1.5rem;
+  transition: all 0.3s ease;
+}
+
+.project-card:hover {
+  cursor: pointer;
+  border: 2px solid #222222;
+  box-shadow: 0 10px 40px rgba(59, 130, 246, 0.1);
+}
+
+/* Project Header */
+.project-header {
+  display: flex;
+  align-items: flex-start;
+  gap: 0.5rem;
+  margin-bottom: 0.75rem;
+}
+
+.project-icon {
+  color: #60a5fa;
+  font-size: 1.25rem;
+}
+
+.project-title {
+  font-size: 1.25rem;
+  font-weight: 600;
+  color: #222222;
+  flex: 1;
+  margin: 0;
+}
+
+/* Project Description */
+.project-description {
+  color: #222222;
+  font-size: 0.875rem;
+  margin-bottom: 1rem;
+  line-height: 1.6;
+}
+
+/* Tech Stack */
+.project-tech {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 0.5rem;
+  margin-bottom: 1rem;
+}
+
+.tech-item {
+  color: #222222;
+  font-size: 0.75rem;
+}
+
+/* Project Footer */
+.project-footer {
+  display: flex;
+  align-items: center;
+  gap: 0.75rem;
+  font-size: 0.875rem;
+}
+
+
+
+.project-link {
+  display: flex;
+  align-items: center;
+  gap: 0.25rem;
+  color: blue;
+  text-decoration: none;
+  transition: color 0.3s ease;
+}
+
+.project-link:hover {
+  color: lightskyblue;
+}
+
+/* Icon sizes */
+.icon-sm {
+  width: 14px;
+  height: 14px;
+}
+
+.about-container {
+  min-height: 100vh;
+ background: #f8f8f8;
+  padding: 2rem;
+  color: #222222;
+}
+
+
+
+/* Navbar container */
+nav {
+  display: flex;
+  justify-content: center;
+  margin-top: 2rem;
+}
+
+/* List wrapper */
+nav li {
+  list-style: none;
+  display: flex;
+  gap: 2rem;
+  padding: 0;
+  margin: 0;
+  width: auto;
+  border-radius: 12px;
+}
+
+/* Link buttons */
+nav a {
+  font-size: 1.25em;
+  text-decoration: none;
+  border-radius: 999px;
+  font-weight: 500;
+  color: #0f172a;
+  transition: background-color 0.2s ease, transform 0.2s ease, box-shadow 0.2s ease;
+}
+
+/* Hover effect */
+nav a:hover {
+ text-decoration: underline;
+}
+
+/* Active / current page (optional) */
+nav a.active {
+  background-color: #6366f1;
+  color: white;
+}

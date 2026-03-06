@@ -38,7 +38,7 @@ function Contact() {
               </div>
               <div className="contact-detail-text">
                 <span>Email</span>
-                <strong>jacob.panilinan10@gmail.com</strong>
+                <strong>jacob.pangilinan10@gmail.com</strong>
               </div>
             </div>
 
@@ -48,7 +48,7 @@ function Contact() {
               </div>
               <div className="contact-detail-text">
                 <span>Phone</span>
-                <strong>+1 (703) 232-890</strong>
+                <strong>+1 (703) 232-6834</strong>
               </div>
             </div>
 

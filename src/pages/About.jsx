@@ -71,7 +71,7 @@ function About() {
               <a href="mailto:jacob@example.com" className="btn-primary">
                 Hire Me →
               </a>
-              <a href="assets/Jacob_Pangilinan_Resume_Final.pdf" download className="btn-secondary">
+              <a href="assets/Jacob_Pangilinan_Resume_Final.pdf" target="_blank" download className="btn-secondary">
                 📄 Download Resume
               </a>
             </div>

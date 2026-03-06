@@ -1,58 +1,121 @@
-import { FaGithub } from "react-icons/fa6";
+import { projectsData } from "../../util/helper";
 
-function ProjectsComponent({ projectsData }) {
+const projectCards = [
+  ...projectsData.map((p, i) => ({
+    emoji: ["src/assets/portfolio-dashboard.png", "src/assets/grounds-for-debate.png", "src/assets/program.png"][i] || "🔷",
+    tags: p.tech.slice(0, 2).map((t, ti) => ({
+      label: t,
+      color: ["#fb923c", "#ef4444", "#eab308", "#38bdf8", "#818cf8"][ti % 5],
+    })),
+    title: p.title,
+    desc: p.description,
+    github: p.github,
+    link: p.link,
+    viewColor: "#fb923c",
+  })),
+];
+
+function Projects() {
+  const displayed = projectCards.slice(0, 6);
+
   return (
-    <div className="projects-container">
-      <div className="projects-wrapper">
+    <section className="projects-section">
+      <div className="section-bg-dots" />
+      <div className="section-inner">
+        <div className="projects-header">
+          <span className="section-badge">Portfolio</span>
+          <h2 className="section-title">
+            Featured <span className="gradient-text">Projects</span>
+          </h2>
+          <p className="section-subtitle">
+            A collection of my recent work showcasing creativity and technical
+            expertise
+          </p>
+        </div>
+
         <div className="projects-grid">
-          {projectsData.map((project, index) => (
-            <div key={index} className="project-card">
-              <div className="project-header">
-                <span className="project-icon">🔹</span>
-                <h2 className="project-title">{project.title}</h2>
+          {displayed.map((p, i) => (
+            <div key={i} className="project-card">
+              <div className="project-card-img">
+                {p.emoji.includes("/") || p.emoji.includes(".") ? (
+                  <img src={p.emoji} alt={p.title} />
+                ) : (
+                  <span>{p.emoji}</span>
+                )}
               </div>
-
-              <p className="project-description">{project.description}</p>
-
-              <div className="project-tech">
-                {project.tech.map((tech, techIndex) => (
-                  <span key={techIndex} className="tech-item">
-                    🔧 {tech}
-                  </span>
-                ))}
-              </div>
-
-              <div className="project-footer">
-                {project.github && (
+              <div className="project-card-body">
+                <div className="project-tags">
+                  {p.tags.map(({ label, color }) => (
+                    <span
+                      key={label}
+                      className="project-tag"
+                      style={{
+                        background: `${color}20`,
+                        color,
+                        border: `1px solid ${color}40`,
+                      }}
+                    >
+                      {label}
+                    </span>
+                  ))}
+                </div>
+                <h3>{p.title}</h3>
+                <p>
+                  {p.desc.length > 100 ? p.desc.slice(0, 100) + "..." : p.desc}
+                </p>
+                <div className="project-card-footer">
                   <a
-                    href={project.github}
-                    className="project-github"
+                    href={p.link || "#"}
+                    className="project-view-link"
+                    style={{ color: p.viewColor }}
                     target="_blank"
                     rel="noopener noreferrer"
                   >
-                    <FaGithub />{" "}
-                    {project.github.includes("http")
-                      ? "Github"
-                      : project.github}
+                    View Project →
                   </a>
-                )}
-                {project.link && (
-                  <a
-                    href={project.link}
-                    className="project-link"
-                    target="_blank"
-                    rel="noopener noreferrer"
-                  >
-                    🔗 {project.link.includes("http") ? "Visit" : project.link}
-                  </a>
-                )}
+                  <div className="project-icon-links">
+                    {p.github && (
+                      <a
+                        href={p.github}
+                        className="project-icon-btn"
+                        target="_blank"
+                        rel="noopener noreferrer"
+                        title="GitHub"
+                      >
+                        ⌥
+                      </a>
+                    )}
+                    {p.link && (
+                      <a
+                        href={p.link}
+                        className="project-icon-btn"
+                        target="_blank"
+                        rel="noopener noreferrer"
+                        title="Live"
+                      >
+                        ↗
+                      </a>
+                    )}
+                  </div>
+                </div>
               </div>
             </div>
           ))}
         </div>
+
+        <div className="projects-cta">
+          <a
+            href="https://github.com/Jpangi"
+            className="btn-primary"
+            target="_blank"
+            rel="noopener noreferrer"
+          >
+            View All Projects →
+          </a>
+        </div>
       </div>
-    </div>
+    </section>
   );
 }
 
-export default ProjectsComponent;
+export default Projects;

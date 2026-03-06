@@ -28,7 +28,7 @@ function About() {
           <div className="about-image-area">
             <div className="about-img-frame">
               <img
-                src="src/assets/profile-pic.jpeg"
+                src="assets/profile-pic.jpeg"
                 alt="Profile"
                 onError={(e) => {
                   e.target.style.display = "none";

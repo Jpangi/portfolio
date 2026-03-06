@@ -2,7 +2,7 @@ import { projectsData } from "../../util/helper";
 
 const projectCards = [
   ...projectsData.map((p, i) => ({
-    emoji: ["src/assets/portfolio-dashboard.png", "src/assets/grounds-for-debate.png", "src/assets/program.png"][i] || "🔷",
+    emoji: ["assets/portfolio-dashboard.png", "assets/grounds-for-debate.png", "assets/program.png"][i] || "🔷",
     tags: p.tech.slice(0, 2).map((t, ti) => ({
       label: t,
       color: ["#fb923c", "#ef4444", "#eab308", "#38bdf8", "#818cf8"][ti % 5],

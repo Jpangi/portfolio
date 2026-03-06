@@ -1,7 +1,7 @@
 function ProfilePic() {
   return (
     <img
-      src="src/assets/profile-pic.jpeg"
+      src="assets/profile-pic.jpeg"
       alt="Jacob Pangi"
       style={{
         width: "100%",
